@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Lua">
+      <UniqueIdentifier>{0074ea80-46b5-48e9-beaf-4ce0cf5fd649}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lua\Inc">
+      <UniqueIdentifier>{3080aa2f-d7dc-4fd5-b446-85b5b1558f44}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ConvallariaLua.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\lapi.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\lauxlib.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\lcode.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\lctype.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\ldebug.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\ldo.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\lfunc.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\lgc.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\llex.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\llimits.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\lmem.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\lobject.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\lopcodes.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\lparser.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\lprefix.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\lstate.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\lstring.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\ltable.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\ltm.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\lua.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\lua.hpp">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\luaconf.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\lualib.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\lundump.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\lvm.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\Inc\lzio.h">
+      <Filter>Lua\Inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ConvallariaLua.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
