@@ -157,9 +157,13 @@
     <ClInclude Include="..\Lua\Inc\lvm.h" />
     <ClInclude Include="..\Lua\Inc\lzio.h" />
     <ClInclude Include="ConvallariaLua.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConvallariaLua.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ConvallariaLua.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
