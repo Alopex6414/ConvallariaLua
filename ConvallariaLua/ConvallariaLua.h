@@ -6,8 +6,9 @@
 * @file		ConvallariaLua.h
 * @brief	This Program is C/C++ -- Lua Script Project.
 * @author	alopex
-* @version	v1.00a
-* @date		2018-08-27
+* @version	v1.01a
+* @date		2018-08-27	v1.00a alopex Create this file.
+* @date		2018-08-30	v1.01a alopex Add function.
 */
 #pragma once
 
@@ -27,6 +28,8 @@
 #include <tchar.h>
 #include <time.h>
 #include <mmsystem.h>
+
+#include <iostream>
 
 //Include Lua Common Header File
 #include "lua.hpp"
@@ -57,13 +60,18 @@ public:
 	CConvallariaLua(const char* szFile);			//CConvallariaLua Construction(构造函数)
 	~CConvallariaLua();								//CConvallariaLua Destruction(析构函数)
 
-	lua_State* CONVALLARIALUA_CALLMODE CConvallariaLuaGetLua() const;		//CConvallariaLua Get Lua(获取Lua虚拟机)
+	lua_State* CONVALLARIALUA_CALLMODE CConvallariaLua_GetLua() const;		//CConvallariaLua Get Lua(获取Lua虚拟机)
 
-	BOOL CONVALLARIALUA_CALLMODE ConvallariaLuaInit();						//CConvallariaLua Initialize(初始化函数)
+	// Init
+	BOOL CONVALLARIALUA_CALLMODE ConvallariaLua_Init();						//CConvallariaLua Initialize(初始化函数)
 
-	void CONVALLARIALUA_CALLMODE ConvallariaLuaGetGlobalInt(const char* szVar, int& nValue);			//CConvallariaLua Get Global Int(获取全局整型)
-	void CONVALLARIALUA_CALLMODE ConvallariaLuaGetGlobalFloat(const char* szVar, float& fValue);		//CConvallariaLua Get Global Float(获取全局浮点型)
-	void CONVALLARIALUA_CALLMODE ConvallariaLuaGetGlobalDouble(const char* szVar, double& dValue);		//CConvallariaLua Get Global Double(获取全局双精度)
+	// Global
+	void CONVALLARIALUA_CALLMODE ConvallariaLua_GetGlobal_Int(const char* szVar, int& nValue);							//CConvallariaLua Get Global Int(获取全局整型)
+	void CONVALLARIALUA_CALLMODE ConvallariaLua_GetGlobal_Long(const char* szVar, long& lValue);						//CConvallariaLua Get Global Long(获取全局长整型)
+	void CONVALLARIALUA_CALLMODE ConvallariaLua_GetGlobal_LongLong(const char* szVar, long long& llValue);				//CConvallariaLua Get Global Long(获取全局长长整型)
+	void CONVALLARIALUA_CALLMODE ConvallariaLua_GetGlobal_Float(const char* szVar, float& fValue);						//CConvallariaLua Get Global Float(获取全局浮点型)
+	void CONVALLARIALUA_CALLMODE ConvallariaLua_GetGlobal_Double(const char* szVar, double& dValue);					//CConvallariaLua Get Global Double(获取全局双精度)
+	void CONVALLARIALUA_CALLMODE ConvallariaLua_GetGlobal_String(const char* szVar, const char* pStr, int nSize);		//CConvallariaLua Get Global String(获取全局字符串)
 
 };
 

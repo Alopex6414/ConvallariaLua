@@ -6,8 +6,9 @@
 * @file		ConvallariaLua.cpp
 * @brief	This Program is C/C++ -- Lua Script Project.
 * @author	alopex
-* @version	v1.00a
-* @date		2018-08-27
+* @version	v1.01a
+* @date		2018-08-27	v1.00a alopex Create this file.
+* @date		2018-08-30	v1.01a alopex Add function.
 */
 #include "ConvallariaLua.h"
 
@@ -50,7 +51,7 @@ CConvallariaLua::~CConvallariaLua()
 // @Para: None
 // @Return: None
 //------------------------------------------------------------------
-lua_State *CONVALLARIALUA_CALLMODE CConvallariaLua::CConvallariaLuaGetLua() const
+lua_State *CONVALLARIALUA_CALLMODE CConvallariaLua::CConvallariaLua_GetLua() const
 {
 	return L;
 }
@@ -62,7 +63,7 @@ lua_State *CONVALLARIALUA_CALLMODE CConvallariaLua::CConvallariaLuaGetLua() cons
 // @Para: None
 // @Return: None
 //------------------------------------------------------------------
-BOOL CONVALLARIALUA_CALLMODE CConvallariaLua::ConvallariaLuaInit()
+BOOL CONVALLARIALUA_CALLMODE CConvallariaLua::ConvallariaLua_Init()
 {
 	char chArr[MAX_PATH] = { 0 };
 	char* pTemp = NULL;
@@ -103,10 +104,38 @@ BOOL CONVALLARIALUA_CALLMODE CConvallariaLua::ConvallariaLuaInit()
 // @Para: int & nValue			// Int整型值
 // @Return: None
 //------------------------------------------------------------------
-void CONVALLARIALUA_CALLMODE CConvallariaLua::ConvallariaLuaGetGlobalInt(const char * szVar, int & nValue)
+void CONVALLARIALUA_CALLMODE CConvallariaLua::ConvallariaLua_GetGlobal_Int(const char * szVar, int & nValue)
 {
 	lua_getglobal(L, szVar);
-	nValue = (int)lua_tonumber(L, -1);
+	nValue = (int)lua_tointeger(L, -1);
+}
+
+//------------------------------------------------------------------
+// @Function:	 ConvallariaLuaGetGlobalLong()
+// @Purpose: CConvallariaLua获取全局变量(Long)
+// @Since: v1.00a
+// @Para: const char * szVar	// Lua字符变量
+// @Para: long & lValue			// Long长整型值
+// @Return: None
+//------------------------------------------------------------------
+void CONVALLARIALUA_CALLMODE CConvallariaLua::ConvallariaLua_GetGlobal_Long(const char * szVar, long & lValue)
+{
+	lua_getglobal(L, szVar);
+	lValue = (long)lua_tointeger(L, -1);
+}
+
+//------------------------------------------------------------------
+// @Function:	 ConvallariaLua_GetGlobal_LongLong()
+// @Purpose: CConvallariaLua获取全局变量(Long Long)
+// @Since: v1.00a
+// @Para: const char * szVar	// Lua字符变量
+// @Para: long long & llValue	// Long Long长整型值
+// @Return: None
+//------------------------------------------------------------------
+void CONVALLARIALUA_CALLMODE CConvallariaLua::ConvallariaLua_GetGlobal_LongLong(const char * szVar, long long & llValue)
+{
+	lua_getglobal(L, szVar);
+	llValue = (long long)lua_tointeger(L, -1);
 }
 
 //------------------------------------------------------------------
@@ -117,7 +146,7 @@ void CONVALLARIALUA_CALLMODE CConvallariaLua::ConvallariaLuaGetGlobalInt(const c
 // @Para: float & fValue		// Float单精度值
 // @Return: None
 //------------------------------------------------------------------
-void CONVALLARIALUA_CALLMODE CConvallariaLua::ConvallariaLuaGetGlobalFloat(const char * szVar, float & fValue)
+void CONVALLARIALUA_CALLMODE CConvallariaLua::ConvallariaLua_GetGlobal_Float(const char * szVar, float & fValue)
 {
 	lua_getglobal(L, szVar);
 	fValue = (float)lua_tonumber(L, -1);
@@ -131,8 +160,25 @@ void CONVALLARIALUA_CALLMODE CConvallariaLua::ConvallariaLuaGetGlobalFloat(const
 // @Para: double & dValue		// Doublt双精度值
 // @Return: None
 //------------------------------------------------------------------
-void CONVALLARIALUA_CALLMODE CConvallariaLua::ConvallariaLuaGetGlobalDouble(const char * szVar, double & dValue)
+void CONVALLARIALUA_CALLMODE CConvallariaLua::ConvallariaLua_GetGlobal_Double(const char * szVar, double & dValue)
 {
 	lua_getglobal(L, szVar);
 	dValue = (double)lua_tonumber(L, -1);
+}
+
+//------------------------------------------------------------------
+// @Function:	 ConvallariaLua_GetGlobal_String()
+// @Purpose: CConvallariaLua获取全局字符串(String)
+// @Since: v1.00a
+// @Para: const char * szVar	// Lua字符变量
+// @Para: const char * pStr		// 字符数组地址
+// @Para: int nSize				// 字符数组长度
+// @Return: None
+//------------------------------------------------------------------
+void CONVALLARIALUA_CALLMODE CConvallariaLua::ConvallariaLua_GetGlobal_String(const char * szVar, const char * pStr, int nSize)
+{
+	std::string str;
+	lua_getglobal(L, szVar);
+	str = lua_tostring(L, -1);
+	strcpy_s((char*)pStr, nSize, str.c_str());
 }
