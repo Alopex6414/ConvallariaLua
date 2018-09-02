@@ -6,11 +6,14 @@
 * @file		ConvallariaLua.cpp
 * @brief	This Program is C/C++ -- Lua Script Project.
 * @author	alopex
-* @version	v1.01a
+* @version	v1.02a
 * @date		2018-08-27	v1.00a alopex Create this file.
 * @date		2018-08-30	v1.01a alopex Add function.
+* @date		2018-09-02	v1.02a alopex Add function.
 */
 #include "ConvallariaLua.h"
+#include "ConvallariaLuaMsg.h"
+#include "ConvallariaLuaType.h"
 
 //C/C++ -- Lua Script Dynamic Link Library.
 
@@ -181,4 +184,46 @@ void CONVALLARIALUA_CALLMODE CConvallariaLua::ConvallariaLua_GetGlobal_String(co
 	lua_getglobal(L, szVar);
 	str = lua_tostring(L, -1);
 	strcpy_s((char*)pStr, nSize, str.c_str());
+}
+
+//------------------------------------------------------------------
+// @Function:	 ConvallariaLua_GetTable_String()
+// @Purpose: CConvallariaLua获取表字符串(String)
+// @Since: v1.00a
+// @Para: const char * szVar1	// Lua表名称
+// @Para: const char * szVar2	// Lua元素名称
+// @Para: const char * pStr		// 字符数组地址
+// @Para: int nSize				// 字符数组长度
+// @Return: None
+//------------------------------------------------------------------
+void CONVALLARIALUA_CALLMODE CConvallariaLua::ConvallariaLua_GetTable_String(const char * szVar1, const char * szVar2, const char * pStr, int nSize)
+{
+	std::string str;
+	lua_getglobal(L, szVar1);
+	lua_getfield(L, -1, szVar2);
+	str = lua_tostring(L, -1);
+	strcpy_s((char*)pStr, nSize, str.c_str());
+}
+
+//------------------------------------------------------------------
+// @Function:	 ConvallariaLua_CallFunc()
+// @Purpose: CConvallariaLua运行函数(lua)
+// @Since: v1.00a
+// @Para: const char * szVar	// Lua函数名称
+// @Para: int nMessageID		// Lua函数消息ID
+// @Para: LPVOID pTransBuf		// 发送参数结构体地址
+// @Para: int nTransSize		// 发送参数结构体长度
+// @Para: LPVOID pRecevBuf		// 接收参数结构体地址
+// @Para: int nRecevSize		// 接收参数结构体长度
+// @Return: None
+//------------------------------------------------------------------
+void CONVALLARIALUA_CALLMODE CConvallariaLua::ConvallariaLua_CallFunc(const char * szVar, int nMessageID, LPVOID pTransBuf, int nTransSize, LPVOID pRecevBuf, int nRecevSize)
+{
+	switch (nMessageID)
+	{
+	case CONVALLARIALUA_MSG_NONE:
+		break;
+	default:
+		break;
+	}
 }

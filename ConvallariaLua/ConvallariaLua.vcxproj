@@ -157,6 +157,8 @@
     <ClInclude Include="..\Lua\Inc\lvm.h" />
     <ClInclude Include="..\Lua\Inc\lzio.h" />
     <ClInclude Include="ConvallariaLua.h" />
+    <ClInclude Include="ConvallariaLuaMsg.h" />
+    <ClInclude Include="ConvallariaLuaType.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
